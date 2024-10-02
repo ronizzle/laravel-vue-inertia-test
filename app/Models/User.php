@@ -20,6 +20,20 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        //typicode.com fields
+        'username',
+        'phone',
+        'website',
+        'company_name',
+        'company_catch_phrase',
+        'company_bs',
+        //address fields
+        'address_street',
+        'address_suite',
+        'address_city',
+        'address_zipcode',
+        'address_geo_lat',
+        'address_geo_lng',
     ];
 
     /**
@@ -31,6 +45,11 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Get the attributes that should be cast.
