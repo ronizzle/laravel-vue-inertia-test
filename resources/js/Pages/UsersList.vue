@@ -14,30 +14,32 @@ const handleDeleteButtonClicked = (userId) => {
 <template>
     <div>
         <div>
-            <h1>Users</h1>
+            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
+                Users
+            </h1>
         </div>
         <div>
-            <table>
-                <thead>
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <td>ID</td>
-                        <td>Username</td>
-                        <td>Email</td>
-                        <td></td>
+                        <th scope="col" class="px-6 py-3">ID</th>
+                        <th scope="col" class="px-6 py-3">Username</th>
+                        <th scope="col" class="px-6 py-3">Email</th>
+                        <th scope="col" class="px-6 py-3"></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <tr v-for="user in users">
-                    <td>
+                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         <span>{{user.id}}</span>
                     </td>
-                    <td>
+                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         <span>{{user.username}}</span>
                     </td>
-                    <td>
+                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         <span>{{user.email}}</span>
                     </td>
-                    <td>
+                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         <button v-on:click="handleDeleteButtonClicked(user.id)">Delete</button>
                     </td>
                 </tr>
