@@ -1,9 +1,9 @@
 <script setup>
 defineProps({
-    posts: []
+    posts: Array
 })
-const handleDeleteButtonClicked = (userId) => {
-
+const handleDeleteButtonClicked = (postId) => {
+    alert(postId)
 }
 </script>
 <template>
@@ -19,6 +19,7 @@ const handleDeleteButtonClicked = (userId) => {
                     <td>Title</td>
                     <td>Username</td>
                     <td></td>
+                    <td></td>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,9 @@ const handleDeleteButtonClicked = (userId) => {
                     </td>
                     <td>
                         <span>{{post.user.username}}</span>
+                    </td>
+                    <td>
+                        <a :href="'/posts/' + post.id">View</a>
                     </td>
                     <td>
                         <button v-on:click="handleDeleteButtonClicked(post.id)">Delete</button>

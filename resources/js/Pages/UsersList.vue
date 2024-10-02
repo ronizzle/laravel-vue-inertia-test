@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-    users: []
+    users: Array
 })
 const handleDeleteButtonClicked = (userId) => {
 

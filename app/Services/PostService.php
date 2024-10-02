@@ -27,4 +27,8 @@ class PostService
     {
         return Post::with('user')->get();
     }
+
+    public function getPostById(int $id) {
+        return Post::with('user')->find($id);
+    }
 }

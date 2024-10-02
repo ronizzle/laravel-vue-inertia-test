@@ -14,3 +14,6 @@ Route::get('/users', function (UserService $userService) {
 Route::get('/posts', function (PostService $postService) {
     return Inertia::render('PostsList', ['posts' => $postService->getPosts()]);
 });
+Route::get('/posts/{id}', function ($id, PostService $postService) {
+    return Inertia::render('PostDetail', ['post' => $postService->getPostById($id)]);
+});
