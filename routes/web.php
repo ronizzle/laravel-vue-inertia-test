@@ -1,14 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Services\PostService;
+use App\Services\UserService;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Home');
+Route::get('/', function (UserService $userService) {
+    return Inertia::render('UsersList', ['users' => $userService->getUsers()]);
 });
-
-Route::get('/about', function () {
-   return \inertia('About', ['user' => 'Timmy']);
+Route::get('/users', function (UserService $userService) {
+    return Inertia::render('UsersList', ['users' => $userService->getUsers()]);
 });
-
-Route::inertia('/about2','About', ['user' => 'Timmy Do Little']);
+Route::get('/posts', function (PostService $postService) {
+    return Inertia::render('PostsList', ['posts' => $postService->getPosts()]);
+});

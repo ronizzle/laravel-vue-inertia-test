@@ -39,4 +39,8 @@ class UserService
 
         return $user;
     }
+
+    public function getUsers() {
+        return User::all();
+    }
 }
