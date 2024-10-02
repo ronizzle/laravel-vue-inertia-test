@@ -1,9 +1,14 @@
 <script setup>
+import {router} from '@inertiajs/vue3';
 defineProps({
     posts: Array
 })
+
+const deletePostById = (postId) => {
+    router.delete(`/posts/${postId}`)
+}
 const handleDeleteButtonClicked = (postId) => {
-    alert(postId)
+    deletePostById(postId)
 }
 </script>
 <template>

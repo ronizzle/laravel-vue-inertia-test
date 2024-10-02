@@ -1,9 +1,14 @@
 <script setup>
+import {router} from '@inertiajs/vue3';
+
 defineProps({
     users: Array
 })
+const deleteUserById = (userId) => {
+    router.delete(`/users/${userId}`)
+}
 const handleDeleteButtonClicked = (userId) => {
-
+    deleteUserById(userId)
 }
 </script>
 <template>
